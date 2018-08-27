@@ -21,9 +21,17 @@
     "eject": "react-scripts eject",
     "api-linux": "./backend/server-linux-amd64",
     "api-windows": "./backend/server-windows-4.0-amd64.exe",
-    "api-os": "./backend/server-darwin-10-amd64"
+    "api-os": "./backend/server-darwin-10-amd64",
+    "eslint": "eslint -c .eslintrc.js src/",
+    "eslint-fix": "eslint -c .eslintrc.js src/ --fix"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
     "npm-run-all": "^4.1.3"
   }
 }
