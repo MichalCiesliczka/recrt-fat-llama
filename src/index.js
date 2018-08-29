@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 
-import rootReducer from './reducers'
-import configureStore from './store'
+import rootReducer from './rootReducer';
+import rootSagas from './rootSagas';
+import configureStore from './store';
 import registerServiceWorker from './registerServiceWorker';
 
-import App from './features/App';
+import App from './core/app';
+import Routes from './routes';
 
 import './index.css';
 
-const { store } = configureStore(rootReducer);
+const { store } = configureStore(rootSagas, rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App>
+      <Routes />
+    </App>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 registerServiceWorker();

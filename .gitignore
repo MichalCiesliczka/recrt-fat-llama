@@ -6,6 +6,9 @@
 # testing
 /coverage
 
+# local config file
+/src/config/config.js
+
 # production
 /build
 
