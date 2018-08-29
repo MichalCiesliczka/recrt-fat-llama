@@ -4,7 +4,11 @@ node_js:
 cache:
   directories:
   - node_modules
+
+before_script:
+  - cp ./src/config/config.js.dist  ./src/config/config.js
+
 script:
-  - npm test
-  - npm eslint
-  - npm run build
+  - yarn test
+  - yarn eslint
+  - yarn build
