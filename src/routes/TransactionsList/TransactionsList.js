@@ -9,24 +9,21 @@ class TransactionsList extends PureComponent {
   }
 
   componentDidUpdate() {
-    const {
-      lastPageError,
-      increaseTransactionsListPage,
-    } = this.props;
-    if (lastPageError) {
-      increaseTransactionsListPage();
-
-      return;
-    }
-
     this.fetchTransactionsList();
   }
 
   fetchTransactionsList = () => {
     const {
+      lastPageError,
+      increaseTransactionsListPage,
       transactionsListRoutine,
       currentTransactionsListPage,
     } = this.props;
+
+    if (lastPageError) {
+      increaseTransactionsListPage();
+      return;
+    }
     transactionsListRoutine({ pageNumber: currentTransactionsListPage });
   }
 

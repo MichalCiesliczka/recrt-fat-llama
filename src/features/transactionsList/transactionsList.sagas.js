@@ -14,10 +14,7 @@ export function* handleTransactionsListRoutine({ payload: { pageNumber, iteratio
       yield put(changeAllTransactionsFetchedStatus(true));
       return;
     }
-    yield put(transactionsListRoutine.success({
-      pageNumber,
-      data: transactionsList,
-    }));
+    yield put(transactionsListRoutine.success(transactionsList));
   } catch (error) {
     if (error.message === SERVER_ERROR_MSG) {
       if (iteration > 0) {

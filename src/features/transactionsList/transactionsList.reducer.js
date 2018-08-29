@@ -43,7 +43,7 @@ export default handleActions({
       ...state,
       transactionsList: [
         ...state.transactionsList,
-        ...payload.data,
+        ...payload,
       ],
     };
   },
