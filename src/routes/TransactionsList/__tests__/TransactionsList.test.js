@@ -25,7 +25,7 @@ describe('<TransactionsListRouting />', () => {
     shallow(<TransactionsListRouting {...defaultProps} />);
   });
 
-  it('should run transactions list routine on mock and update', () => {
+  it('should run transactions list routine on mount and update', () => {
     const component = shallow(<TransactionsListRouting {...defaultProps} />);
 
     expect(defaultProps.transactionsListRoutine.mock.calls.length).toEqual(1);

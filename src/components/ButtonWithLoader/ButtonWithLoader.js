@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
-import Loader from '../Loader/Loader';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const ButtonWithLoader = ({ onClick, children, loading }) => (
   <Fragment>
     {
       loading ? (
-        <Loader />
+        <CircularProgress />
       ) : (
         <Button
           variant="contained"
