@@ -1,6 +1,15 @@
 import React, { PureComponent } from 'react';
 // TODO: Add flow
 import PropTypes from 'prop-types';
+import Grid from '@material-ui/core/Grid';
+
+import TransactionsTable from '../../../components/TransactionsTable/TransactionsTable';
+
+// TODO: Think if create a CSS class for that.
+const containerStyles = {
+  maxWidth: 900,
+  margin: 'auto',
+};
 
 class TransactionsListComponent extends PureComponent {
   handleLoadMoreButton = () => {
@@ -13,14 +22,8 @@ class TransactionsListComponent extends PureComponent {
   render() {
     const { transactionsList, areAllTransactionFetched } = this.props;
     return (
-      <div>
-        {
-          transactionsList.map(transaction => (
-            <div key={transaction.id}>
-              <p>{transaction.fromDate}</p>
-            </div>
-          ))
-        }
+      <Grid container style={containerStyles}>
+        <TransactionsTable data={transactionsList} />
         {
           !areAllTransactionFetched && (
             <button
@@ -31,7 +34,7 @@ class TransactionsListComponent extends PureComponent {
             </button>
           )
         }
-      </div>
+      </Grid>
     );
   }
 }
