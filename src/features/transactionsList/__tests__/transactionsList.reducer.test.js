@@ -61,6 +61,14 @@ describe('transactionsList reducer', () => {
     expect(changedState.transactionsList).toEqual([...payload, ...nextData]);
   });
 
+  it('should mark data as loading when request has been sent', () => {
+    const changedState = transactionsList(
+      initialState,
+      { type: transactionsListRoutine.REQUEST },
+    );
+    expect(changedState.isDataLoading).toEqual(true);
+  });
+
   it('should mark error when fetch is not successful', () => {
     const changedState = transactionsList(
       initialState,

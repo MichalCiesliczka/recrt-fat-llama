@@ -9,6 +9,7 @@ export const transactionsListRoutine = createRoutine('TRANSACTIONS_LIST/FETCH_ON
 
 export function* handleTransactionsListRoutine({ payload: { pageNumber, iteration = 0 } }) {
   try {
+    yield put(transactionsListRoutine.request());
     const transactionsList = yield call(fetchTransactionsList, pageNumber);
     if (!transactionsList.length) {
       yield put(changeAllTransactionsFetchedStatus(true));

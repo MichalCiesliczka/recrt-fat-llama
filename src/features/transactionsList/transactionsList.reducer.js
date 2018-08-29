@@ -13,6 +13,7 @@ export const initialState = {
   currentPage: 0,
   allFetched: false,
   lastPageError: false,
+  isDataLoading: false,
   transactionsList: [],
 };
 
@@ -32,19 +33,27 @@ export default handleActions({
       allFetched: payload,
     };
   },
-  [transactionsListRoutine.FAILURE](state) {
+  [transactionsListRoutine.REQUEST](state) {
     return {
       ...state,
-      lastPageError: true,
+      isDataLoading: true,
     };
   },
   [transactionsListRoutine.SUCCESS](state, { payload }) {
     return {
       ...state,
+      isDataLoading: false,
       transactionsList: [
         ...state.transactionsList,
         ...payload,
       ],
+    };
+  },
+  [transactionsListRoutine.FAILURE](state) {
+    return {
+      ...state,
+      lastPageError: true,
+      isDataLoading: false,
     };
   },
   [combineActions(

@@ -3,35 +3,42 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 
-import TransactionsTable from '../../../components/TransactionsTable/TransactionsTable';
-
-// TODO: Think if create a CSS class for that.
-const containerStyles = {
-  maxWidth: 900,
-  margin: 'auto',
-};
+import TransactionsTable from '../../../components/TransactionsTable';
+import ButtonWithLoader from '../../../components/ButtonWithLoader/ButtonWithLoader';
 
 class TransactionsListComponent extends PureComponent {
   handleLoadMoreButton = () => {
-    const {
-      increaseTransactionsListPage,
-    } = this.props;
+    const { increaseTransactionsListPage } = this.props;
     increaseTransactionsListPage();
   }
 
   render() {
-    const { transactionsList, areAllTransactionFetched } = this.props;
+    const {
+      transactionsList,
+      areAllTransactionFetched,
+      isDataLoading,
+    } = this.props;
+
     return (
-      <Grid container style={containerStyles}>
-        <TransactionsTable data={transactionsList} />
+      <Grid
+        container
+        alignItems="center"
+        direction="column"
+        spacing={16}
+      >
+        <Grid item>
+          <TransactionsTable data={transactionsList} />
+        </Grid>
         {
           !areAllTransactionFetched && (
-            <button
-              type="button"
-              onClick={this.handleLoadMoreButton}
-            >
-              Load more
-            </button>
+            <Grid item>
+              <ButtonWithLoader
+                onClick={this.handleLoadMoreButton}
+                loading={isDataLoading}
+              >
+                Load more
+              </ButtonWithLoader>
+            </Grid>
           )
         }
       </Grid>
@@ -57,6 +64,7 @@ TransactionsListComponent.propTypes = {
   })).isRequired,
   increaseTransactionsListPage: PropTypes.func.isRequired,
   areAllTransactionFetched: PropTypes.bool.isRequired,
+  isDataLoading: PropTypes.bool.isRequired,
 };
 
 export default TransactionsListComponent;
