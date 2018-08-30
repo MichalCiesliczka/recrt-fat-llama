@@ -1,4 +1,3 @@
-// TODO: add config with API URL
 import CONFIG from '../config/config';
 
 export const SERVER_ERROR_MSG = 'Server Error';

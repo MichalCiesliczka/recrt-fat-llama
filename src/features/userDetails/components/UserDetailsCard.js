@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
+import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -13,24 +15,27 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import PhoneIcon from '@material-ui/icons/LocalPhone';
 import EmailIcon from '@material-ui/icons/AlternateEmail';
 
-import { UserDetailsTypes } from '../../features/userDetails/userDetails.api';
-import { prepareUserName } from '../../utilities/string';
+import { UserDetailsTypes } from '../userDetails.api';
+import { prepareUserName } from '../../../utilities/string';
 
-// TODO: Add proper styles
-const UserDetailsCard = ({ user }) => {
+const styles = {
+  card: {
+    width: 450,
+  },
+  media: {
+    height: 200,
+    width: 200,
+    margin: 'auto',
+  },
+};
+
+const UserDetailsCard = ({ user, classes }) => {
   return (
-    <Card
-      style={{
-        maxWidth: 600,
-      }}
-    >
+    <Card className={classes.card}>
       <CardMedia
+        // NOTE: Temporary avatar as the one from API is not working.
         image={`https://api.adorable.io/avatars/200/${user.email}.png`}
-        style={{
-          height: 200,
-          width: 200,
-          margin: 'auto',
-        }}
+        className={classes.media}
         title="User avatar"
       />
       <CardContent>
@@ -64,10 +69,13 @@ const UserDetailsCard = ({ user }) => {
 
 UserDetailsCard.propTypes = {
   user: UserDetailsTypes,
+  /* eslint-disable */
+  classes: PropTypes.object.isRequired,
+  /* eslint-enable */
 };
 
 UserDetailsCard.defaultProps = {
   user: {},
 };
 
-export default UserDetailsCard;
+export default withStyles(styles)(UserDetailsCard);

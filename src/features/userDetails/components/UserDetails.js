@@ -3,7 +3,7 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import UserDetailsCard from '../../../components/UserDetailsCard/UserDetailsCard';
+import UserDetailsCard from './UserDetailsCard';
 import { UserDetailsTypes } from '../userDetails.api';
 
 class UserDetailsComponent extends PureComponent {

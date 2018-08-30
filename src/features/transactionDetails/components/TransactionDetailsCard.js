@@ -3,14 +3,14 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import differenceInDays from 'date-fns/difference_in_days';
 
 import Grid from '@material-ui/core/Grid';
+import Chip from '@material-ui/core/Chip';
+import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
-import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
 
-// TODO: Add icoms
 import CalendarIcon from '@material-ui/icons/CalendarToday';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
@@ -23,7 +23,7 @@ import PaymentIcon from '@material-ui/icons/Payment';
 import { formatDate } from '../../../utilities/dates';
 import { formatMoneyWithCurrency } from '../../../utilities/money';
 import { STATUS_LABELS } from '../transactionDetails.constans';
-import { transactionDetailsTypes } from '../transactionDetails.api';
+import { transactionDetailsTypes, acceptTransaction } from '../transactionDetails.api';
 
 import UserDetailsRoute from '../../../routes/UserDetails';
 
@@ -36,6 +36,11 @@ const TransactionDetailsCard = ({ transaction }) => {
         color="primary"
         variant="outlined"
       />
+      <Button
+        onClick={() => acceptTransaction(transaction.id)}
+      >
+        Accept it
+      </Button>
       <br />
       <br />
       ItemId: #

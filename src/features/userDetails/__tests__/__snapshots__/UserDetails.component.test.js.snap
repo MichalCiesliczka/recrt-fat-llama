@@ -58,47 +58,39 @@ exports[`UserDetails component display loader with default props 1`] = `
 
 exports[`UserDetails component display user details card when either data is not loading and there is a user object in store 1`] = `
 <div
-  className="MuiPaper-root-20 MuiPaper-elevation1-23 MuiPaper-rounded-21 MuiCard-root-19"
-  style={
-    Object {
-      "maxWidth": 600,
-    }
-  }
+  className="MuiPaper-root-22 MuiPaper-elevation1-25 MuiPaper-rounded-23 MuiCard-root-21 UserDetailsCard-card-19"
 >
   <div
-    className="MuiCardMedia-root-47"
+    className="MuiCardMedia-root-49 UserDetailsCard-media-20"
     src={undefined}
     style={
       Object {
         "backgroundImage": "url(\\"https://api.adorable.io/avatars/200/asd@asd.com.png\\")",
-        "height": 200,
-        "margin": "auto",
-        "width": 200,
       }
     }
     title="User avatar"
   />
   <div
-    className="MuiCardContent-root-49"
+    className="MuiCardContent-root-51"
   >
     <h2
-      className="MuiTypography-root-50 MuiTypography-headline-55 MuiTypography-gutterBottom-67"
+      className="MuiTypography-root-52 MuiTypography-headline-57 MuiTypography-gutterBottom-69"
     >
       Mr./Ms. John Doe
     </h2>
     <ul
-      className="MuiList-root-75 MuiList-padding-76"
+      className="MuiList-root-77 MuiList-padding-78"
     >
       <li
-        className="MuiListItem-root-79 MuiListItem-default-82 MuiListItem-gutters-86"
+        className="MuiListItem-root-81 MuiListItem-default-84 MuiListItem-gutters-88"
         disabled={false}
       >
         <div
-          className="MuiAvatar-root-90 MuiAvatar-colorDefault-91"
+          className="MuiAvatar-root-92 MuiAvatar-colorDefault-93"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-93"
+            className="MuiSvgIcon-root-95"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -113,30 +105,30 @@ exports[`UserDetails component display user details card when either data is not
           </svg>
         </div>
         <div
-          className="MuiListItemText-root-100"
+          className="MuiListItemText-root-102"
         >
           <span
-            className="MuiTypography-root-50 MuiTypography-subheading-57 MuiListItemText-primary-103"
+            className="MuiTypography-root-52 MuiTypography-subheading-59 MuiListItemText-primary-105"
           >
             Credits
           </span>
           <p
-            className="MuiTypography-root-50 MuiTypography-body1-59 MuiTypography-colorTextSecondary-73 MuiListItemText-secondary-104"
+            className="MuiTypography-root-52 MuiTypography-body1-61 MuiTypography-colorTextSecondary-75 MuiListItemText-secondary-106"
           >
             1000
           </p>
         </div>
       </li>
       <li
-        className="MuiListItem-root-79 MuiListItem-default-82 MuiListItem-gutters-86"
+        className="MuiListItem-root-81 MuiListItem-default-84 MuiListItem-gutters-88"
         disabled={false}
       >
         <div
-          className="MuiAvatar-root-90 MuiAvatar-colorDefault-91"
+          className="MuiAvatar-root-92 MuiAvatar-colorDefault-93"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-93"
+            className="MuiSvgIcon-root-95"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -151,30 +143,30 @@ exports[`UserDetails component display user details card when either data is not
           </svg>
         </div>
         <div
-          className="MuiListItemText-root-100"
+          className="MuiListItemText-root-102"
         >
           <span
-            className="MuiTypography-root-50 MuiTypography-subheading-57 MuiListItemText-primary-103"
+            className="MuiTypography-root-52 MuiTypography-subheading-59 MuiListItemText-primary-105"
           >
             Phone number
           </span>
           <p
-            className="MuiTypography-root-50 MuiTypography-body1-59 MuiTypography-colorTextSecondary-73 MuiListItemText-secondary-104"
+            className="MuiTypography-root-52 MuiTypography-body1-61 MuiTypography-colorTextSecondary-75 MuiListItemText-secondary-106"
           >
             +48123
           </p>
         </div>
       </li>
       <li
-        className="MuiListItem-root-79 MuiListItem-default-82 MuiListItem-gutters-86"
+        className="MuiListItem-root-81 MuiListItem-default-84 MuiListItem-gutters-88"
         disabled={false}
       >
         <div
-          className="MuiAvatar-root-90 MuiAvatar-colorDefault-91"
+          className="MuiAvatar-root-92 MuiAvatar-colorDefault-93"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-93"
+            className="MuiSvgIcon-root-95"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -190,15 +182,15 @@ exports[`UserDetails component display user details card when either data is not
           </svg>
         </div>
         <div
-          className="MuiListItemText-root-100"
+          className="MuiListItemText-root-102"
         >
           <span
-            className="MuiTypography-root-50 MuiTypography-subheading-57 MuiListItemText-primary-103"
+            className="MuiTypography-root-52 MuiTypography-subheading-59 MuiListItemText-primary-105"
           >
             Email address
           </span>
           <p
-            className="MuiTypography-root-50 MuiTypography-body1-59 MuiTypography-colorTextSecondary-73 MuiListItemText-secondary-104"
+            className="MuiTypography-root-52 MuiTypography-body1-61 MuiTypography-colorTextSecondary-75 MuiListItemText-secondary-106"
           >
             asd@asd.com
           </p>
