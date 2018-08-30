@@ -3,6 +3,7 @@ import {
   getAllFetchedStatus,
   getLastPageErrorStatus,
   getDataLoadingStatus,
+  getFetchedPagesNumbers,
   getTransactionsList,
 } from '../transactionsList.selectors';
 import { initialState } from '../transactionsList.reducer';
@@ -26,6 +27,10 @@ describe('transactionsList selectors', () => {
 
   it('should return status if if data is loading', () => {
     expect(getDataLoadingStatus(state)).toEqual(initialState.isDataLoading);
+  });
+
+  it('should return an array of fetched pages', () => {
+    expect(getFetchedPagesNumbers(state)).toEqual(initialState.fetchedPages);
   });
 
   it('should return transactions list', () => {
