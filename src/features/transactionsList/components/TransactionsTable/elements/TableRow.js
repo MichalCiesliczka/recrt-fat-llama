@@ -5,9 +5,9 @@ import { withRouter } from 'react-router';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
-import { formatDate } from '../../../utilities/dates';
-import { STATUS_LABELS } from '../../../features/transactionDetails/transactionDetails.constans';
-import { transactionDetailsTypes } from '../../../features/transactionDetails/transactionDetails.api';
+import { formatDate } from '../../../../../utilities/dates';
+import { STATUS_LABELS } from '../../../../transactionDetails/transactionDetails.constans';
+import { transactionDetailsTypes } from '../../../../transactionDetails/transactionDetails.api';
 
 
 const TransactionsTableRow = ({ index, history, row }) => {

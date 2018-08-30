@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDetails component display loader when data is loading 1`] = `
+<div
+  className="MuiCircularProgress-root-10 MuiCircularProgress-colorPrimary-13 MuiCircularProgress-indeterminate-12"
+  role="progressbar"
+  style={
+    Object {
+      "height": 40,
+      "width": 40,
+    }
+  }
+>
+  <svg
+    className="MuiCircularProgress-svg-15"
+    viewBox="22 22 44 44"
+  >
+    <circle
+      className="MuiCircularProgress-circle-16 MuiCircularProgress-circleIndeterminate-18"
+      cx={44}
+      cy={44}
+      fill="none"
+      r={20.2}
+      strokeWidth={3.6}
+      style={Object {}}
+    />
+  </svg>
+</div>
+`;
+
+exports[`UserDetails component display loader with default props 1`] = `
+<div
+  className="MuiCircularProgress-root-10 MuiCircularProgress-colorPrimary-13 MuiCircularProgress-indeterminate-12"
+  role="progressbar"
+  style={
+    Object {
+      "height": 40,
+      "width": 40,
+    }
+  }
+>
+  <svg
+    className="MuiCircularProgress-svg-15"
+    viewBox="22 22 44 44"
+  >
+    <circle
+      className="MuiCircularProgress-circle-16 MuiCircularProgress-circleIndeterminate-18"
+      cx={44}
+      cy={44}
+      fill="none"
+      r={20.2}
+      strokeWidth={3.6}
+      style={Object {}}
+    />
+  </svg>
+</div>
+`;
+
+exports[`UserDetails component display user details card when either data is not loading and there is a user object in store 1`] = `
+<div
+  className="MuiPaper-root-20 MuiPaper-elevation1-23 MuiPaper-rounded-21 MuiCard-root-19"
+  style={
+    Object {
+      "maxWidth": 600,
+    }
+  }
+>
+  <div
+    className="MuiCardMedia-root-47"
+    src={undefined}
+    style={
+      Object {
+        "backgroundImage": "url(\\"https://api.adorable.io/avatars/200/asd@asd.com.png\\")",
+        "height": 200,
+        "margin": "auto",
+        "width": 200,
+      }
+    }
+    title="User avatar"
+  />
+  <div
+    className="MuiCardContent-root-49"
+  >
+    <h2
+      className="MuiTypography-root-50 MuiTypography-headline-55 MuiTypography-gutterBottom-67"
+    >
+      Mr./Ms. John Doe
+    </h2>
+    <ul
+      className="MuiList-root-75 MuiList-padding-76"
+    >
+      <li
+        className="MuiListItem-root-79 MuiListItem-default-82 MuiListItem-gutters-86"
+        disabled={false}
+      >
+        <div
+          className="MuiAvatar-root-90 MuiAvatar-colorDefault-91"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-93"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </div>
+        <div
+          className="MuiListItemText-root-100"
+        >
+          <span
+            className="MuiTypography-root-50 MuiTypography-subheading-57 MuiListItemText-primary-103"
+          >
+            Credits
+          </span>
+          <p
+            className="MuiTypography-root-50 MuiTypography-body1-59 MuiTypography-colorTextSecondary-73 MuiListItemText-secondary-104"
+          >
+            1000
+          </p>
+        </div>
+      </li>
+      <li
+        className="MuiListItem-root-79 MuiListItem-default-82 MuiListItem-gutters-86"
+        disabled={false}
+      >
+        <div
+          className="MuiAvatar-root-90 MuiAvatar-colorDefault-91"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-93"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+            />
+          </svg>
+        </div>
+        <div
+          className="MuiListItemText-root-100"
+        >
+          <span
+            className="MuiTypography-root-50 MuiTypography-subheading-57 MuiListItemText-primary-103"
+          >
+            Phone number
+          </span>
+          <p
+            className="MuiTypography-root-50 MuiTypography-body1-59 MuiTypography-colorTextSecondary-73 MuiListItemText-secondary-104"
+          >
+            +48123
+          </p>
+        </div>
+      </li>
+      <li
+        className="MuiListItem-root-79 MuiListItem-default-82 MuiListItem-gutters-86"
+        disabled={false}
+      >
+        <div
+          className="MuiAvatar-root-90 MuiAvatar-colorDefault-91"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-93"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57V12c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57V12c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+              fillOpacity=".9"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </div>
+        <div
+          className="MuiListItemText-root-100"
+        >
+          <span
+            className="MuiTypography-root-50 MuiTypography-subheading-57 MuiListItemText-primary-103"
+          >
+            Email address
+          </span>
+          <p
+            className="MuiTypography-root-50 MuiTypography-body1-59 MuiTypography-colorTextSecondary-73 MuiListItemText-secondary-104"
+          >
+            asd@asd.com
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

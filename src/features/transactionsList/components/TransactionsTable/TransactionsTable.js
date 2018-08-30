@@ -5,12 +5,12 @@ import TableHead from '@material-ui/core/TableHead';
 
 import TransactionsTableHeader, { rows } from './elements/TableHeader';
 import TransactionsTableRow from './elements/TableRow';
-import { sortByType } from '../../utilities/arrays';
-import { TransactionsListTypes } from '../../features/transactionsList/transactionsList.api';
+import { sortByType } from '../../../../utilities/arrays';
+import { TransactionsListTypes } from '../../transactionsList.api';
 
 class TransactionsTable extends PureComponent {
   static propTypes = {
-    data: TransactionsListTypes.isRequired,
+    transactionsList: TransactionsListTypes.isRequired,
   };
 
   state = {
@@ -36,7 +36,7 @@ class TransactionsTable extends PureComponent {
 
   render() {
     const { orderBy, orderAsc } = this.state;
-    const { data } = this.props;
+    const { transactionsList } = this.props;
 
     return (
       <Table>
@@ -48,7 +48,7 @@ class TransactionsTable extends PureComponent {
           />
         </TableHead>
         <TableBody>
-          {data
+          {transactionsList
             .sort(this.handleSorting)
             .map((row, index) => (
               <TransactionsTableRow

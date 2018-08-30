@@ -3,13 +3,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 
-import TransactionsTable from '../../../components/TransactionsTable';
+import TransactionsTable from '../containers/TransactionsTable';
 import ButtonWithLoader from '../../../components/ButtonWithLoader/ButtonWithLoader';
-import { TransactionsListTypes } from '../transactionsList.api';
 
 class TransactionsListComponent extends PureComponent {
   static propTypes = {
-    transactionsList: TransactionsListTypes.isRequired,
     increaseTransactionsListPage: PropTypes.func.isRequired,
     areAllTransactionFetched: PropTypes.bool.isRequired,
     isDataLoading: PropTypes.bool.isRequired,
@@ -22,7 +20,6 @@ class TransactionsListComponent extends PureComponent {
 
   render() {
     const {
-      transactionsList,
       areAllTransactionFetched,
       isDataLoading,
     } = this.props;
@@ -35,7 +32,7 @@ class TransactionsListComponent extends PureComponent {
         spacing={16}
       >
         <Grid item>
-          <TransactionsTable data={transactionsList} />
+          <TransactionsTable />
         </Grid>
         {
           !areAllTransactionFetched && (

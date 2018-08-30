@@ -9,11 +9,6 @@ class TransactionsList extends PureComponent {
     this.fetchTransactionDetails();
   }
 
-  // TODO: Check if needed
-  // componentDidUpdate() {
-  //   this.fetchTransactionDetails();
-  // }
-
   fetchTransactionDetails = () => {
     const {
       transactionDetailsRoutine,

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import differenceInDays from 'date-fns/difference_in_days';
 
 import Grid from '@material-ui/core/Grid';
@@ -20,12 +20,12 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoneyOffIcon from '@material-ui/icons/MoneyOff';
 import PaymentIcon from '@material-ui/icons/Payment';
 
-import { formatDate } from '../../utilities/dates';
-import { formatMoneyWithCurrency } from '../../utilities/money';
-import { STATUS_LABELS } from '../../features/transactionDetails/transactionDetails.constans';
-import { transactionDetailsTypes } from '../../features/transactionDetails/transactionDetails.api';
+import { formatDate } from '../../../utilities/dates';
+import { formatMoneyWithCurrency } from '../../../utilities/money';
+import { STATUS_LABELS } from '../transactionDetails.constans';
+import { transactionDetailsTypes } from '../transactionDetails.api';
 
-import UserDetailsRoute from '../../routes/UserDetails';
+import UserDetailsRoute from '../../../routes/UserDetails';
 
 const TransactionDetailsCard = ({ transaction }) => {
   const totalAmountToPay = Math.max(transaction.price - transaction.totalDiscount, 0);
@@ -108,25 +108,27 @@ const TransactionDetailsCard = ({ transaction }) => {
       <Typography gutterBottom variant="headline" component="h2">
         Users
       </Typography>
-      <Grid
-        container
-        justify="center"
-        direction="row"
-        spacing={32}
-      >
-        <Grid item>
-          <Typography gutterBottom variant="headline" component="h2">
-            Lender
-          </Typography>
-          <Route render={() => <UserDetailsRoute userId={transaction.lenderId} />} />
+      <Router>
+        <Grid
+          container
+          justify="center"
+          direction="row"
+          spacing={32}
+        >
+          <Grid item>
+            <Typography gutterBottom variant="headline" component="h2">
+              Lender
+            </Typography>
+            <Route render={() => <UserDetailsRoute userId={transaction.lenderId} />} />
+          </Grid>
+          <Grid item>
+            <Typography gutterBottom variant="headline" component="h2">
+              Borrower
+            </Typography>
+            <Route render={() => <UserDetailsRoute userId={transaction.borrowerId} />} />
+          </Grid>
         </Grid>
-        <Grid item>
-          <Typography gutterBottom variant="headline" component="h2">
-            Borrower
-          </Typography>
-          <Route render={() => <UserDetailsRoute userId={transaction.borrowerId} />} />
-        </Grid>
-      </Grid>
+      </Router>
     </Fragment>
   );
 };

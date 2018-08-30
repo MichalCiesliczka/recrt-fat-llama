@@ -30,14 +30,6 @@ describe('transactionsList reducer', () => {
     expect(changedState.allFetched).toEqual(false);
   });
 
-  it('should change status if all transactions are fetched', () => {
-    let changedState = transactionsList(initialState, changeAllTransactionsFetchedStatus(true));
-    expect(changedState.allFetched).toEqual(true);
-
-    changedState = transactionsList(initialState, changeAllTransactionsFetchedStatus(false));
-    expect(changedState.allFetched).toEqual(false);
-  });
-
   it('should save transactions list and update it when new data comes in', () => {
     const payload = [
       { id: 1 },
