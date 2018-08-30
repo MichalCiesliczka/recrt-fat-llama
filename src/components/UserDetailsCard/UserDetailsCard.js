@@ -14,6 +14,7 @@ import PhoneIcon from '@material-ui/icons/LocalPhone';
 import EmailIcon from '@material-ui/icons/AlternateEmail';
 
 import { UserDetailsTypes } from '../../features/userDetails/userDetails.api';
+import { prepareUserName } from '../../utilities/string';
 
 // TODO: Add proper styles
 const UserDetailsCard = ({ user }) => {
@@ -34,7 +35,7 @@ const UserDetailsCard = ({ user }) => {
       />
       <CardContent>
         <Typography gutterBottom variant="headline" component="h2">
-          {user.firstName} {user.lastName}
+          {prepareUserName(user.firstName, user.lastName)}
         </Typography>
         <List>
           <ListItem>
