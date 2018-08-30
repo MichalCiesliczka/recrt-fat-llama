@@ -8,14 +8,20 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 
+// TODO: Add icoms
+import CalendarIcon from '@material-ui/icons/CalendarToday';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import MoneyOffIcon from '@material-ui/icons/MoneyOff';
+import PaymentIcon from '@material-ui/icons/Payment';
+
 import { formatDate } from '../../utilities/dates';
 import { formatMoneyWithCurrency } from '../../utilities/money';
 import { STATUS_LABELS } from '../../features/transactionDetails/transactionDetails.constans';
-
-// TODO: Add icoms
-// import ImageIcon from '@material-ui/icons/Image';
-// import WorkIcon from '@material-ui/icons/Work';
-// import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import { transactionDetailsTypes } from '../../features/transactionDetails/transactionDetails.api';
 
 const TransactionDetailsCard = ({ transaction }) => {
   const totalAmountToPay = Math.max(transaction.price - transaction.totalDiscount, 0);
@@ -26,6 +32,10 @@ const TransactionDetailsCard = ({ transaction }) => {
         color="primary"
         variant="outlined"
       />
+      <br />
+      <br />
+      ItemId: #
+      {transaction.itemId}
       <Grid
         container
         justify="center"
@@ -37,19 +47,19 @@ const TransactionDetailsCard = ({ transaction }) => {
           <List>
             <ListItem>
               <Avatar>
-                {/* <ImageIcon /> */}
+                <CalendarIcon />
               </Avatar>
               <ListItemText primary="From Date" secondary={formatDate(transaction.fromDate)} />
             </ListItem>
             <ListItem>
               <Avatar>
-                {/* <WorkIcon /> */}
+                <SkipNextIcon />
               </Avatar>
               <ListItemText primary="To Date" secondary={formatDate(transaction.toDate)} />
             </ListItem>
             <ListItem>
               <Avatar>
-                {/* <BeachAccessIcon /> */}
+                <AccessTimeIcon />
               </Avatar>
               <ListItemText primary="Total days" secondary={differenceInDays(transaction.toDate, transaction.fromDate)} />
             </ListItem>
@@ -60,31 +70,31 @@ const TransactionDetailsCard = ({ transaction }) => {
           <List>
             <ListItem>
               <Avatar>
-                {/* <ImageIcon /> */}
+                <AttachMoneyIcon />
               </Avatar>
               <ListItemText primary="Total Price" secondary={formatMoneyWithCurrency(transaction.price, transaction.currency)} />
             </ListItem>
             <ListItem>
               <Avatar>
-                {/* <WorkIcon /> */}
+                <SaveAltIcon />
               </Avatar>
               <ListItemText primary="Magic credit used" secondary={formatMoneyWithCurrency(transaction.creditUsed, transaction.currency)} />
             </ListItem>
             <ListItem>
               <Avatar>
-                {/* <BeachAccessIcon /> */}
+                <FavoriteIcon />
               </Avatar>
               <ListItemText primary="Promocode" secondary={transaction.promocode || '-'} />
             </ListItem>
             <ListItem>
               <Avatar>
-                {/* <BeachAccessIcon /> */}
+                <MoneyOffIcon />
               </Avatar>
               <ListItemText primary="Total discount" secondary={formatMoneyWithCurrency(transaction.totalDiscount, transaction.currency)} />
             </ListItem>
             <ListItem>
               <Avatar>
-                {/* <BeachAccessIcon /> */}
+                <PaymentIcon />
               </Avatar>
               <ListItemText primary="To pay" secondary={formatMoneyWithCurrency(totalAmountToPay, transaction.currency)} />
             </ListItem>
@@ -93,6 +103,14 @@ const TransactionDetailsCard = ({ transaction }) => {
       </Grid>
     </Fragment>
   );
+};
+
+TransactionDetailsCard.propTypes = {
+  transaction: transactionDetailsTypes,
+};
+
+TransactionDetailsCard.defaultProps = {
+  transaction: {},
 };
 
 export default TransactionDetailsCard;

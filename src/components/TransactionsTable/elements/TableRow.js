@@ -7,9 +7,10 @@ import TableRow from '@material-ui/core/TableRow';
 
 import { formatDate } from '../../../utilities/dates';
 import { STATUS_LABELS } from '../../../features/transactionDetails/transactionDetails.constans';
+import { transactionDetailsTypes } from '../../../features/transactionDetails/transactionDetails.api';
 
 
-const TransactionsTableRow = ({ index, history, ...row }) => {
+const TransactionsTableRow = ({ index, history, row }) => {
   const redirectToDetails = id => history.push(`/transaction/${id}`);
   return (
     <TableRow
@@ -30,7 +31,14 @@ const TransactionsTableRow = ({ index, history, ...row }) => {
 
 TransactionsTableRow.propTypes = {
   index: PropTypes.number.isRequired,
-  // TODO: Add row types
+  row: transactionDetailsTypes,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+TransactionsTableRow.defaultProps = {
+  row: {},
 };
 
 export default withRouter(TransactionsTableRow);

@@ -4,8 +4,18 @@ import PropTypes from 'prop-types';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import TransactionDetailsCard from '../../../components/TransactionDetailsCard/TransactionDetailsCard';
+import { transactionDetailsTypes } from '../transactionDetails.api';
 
 class TransactionDetailsComponent extends PureComponent {
+  static propTypes = {
+    transaction: transactionDetailsTypes,
+    isDataLoading: PropTypes.bool.isRequired,
+  }
+
+  static defaultProps = {
+    transaction: null,
+  };
+
   render() {
     const {
       transaction,
@@ -27,24 +37,5 @@ class TransactionDetailsComponent extends PureComponent {
     );
   }
 }
-
-TransactionDetailsComponent.propTypes = {
-  // TODO: Fix those types
-  transaction: PropTypes.shape({
-    borrowerId: PropTypes.number.isRequired,
-    creditUsed: PropTypes.number.isRequired,
-    currency: PropTypes.string.isRequired,
-    fromDate: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    itemId: PropTypes.number.isRequired,
-    lenderId: PropTypes.number.isRequired,
-    price: PropTypes.number.isRequired,
-    promocode: PropTypes.string,
-    status: PropTypes.oneOf(['FL_APPROVED', 'PRE_AUTHORIZED_CANCELLED', 'ESCROW', 'PRE_AUTHORIZED', 'PAID', 'CANCELLED', 'QUARANTINED']).isRequired,
-    toDate: PropTypes.string.isRequired,
-    totalDiscount: PropTypes.number.isRequired,
-  }),
-  isDataLoading: PropTypes.bool.isRequired,
-};
 
 export default TransactionDetailsComponent;

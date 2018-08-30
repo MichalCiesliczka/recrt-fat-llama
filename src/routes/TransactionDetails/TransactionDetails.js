@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import TransactionDetailsContainer from '../../features/transactionDetails';
 
@@ -26,6 +27,9 @@ class TransactionsList extends PureComponent {
     const { transactionId } = this.props;
     return (
       <div>
+        <NavLink to="/">
+          Get back to list
+        </NavLink>
         <p>
           Details for transaction: #
           {transactionId}

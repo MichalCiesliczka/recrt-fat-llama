@@ -6,8 +6,13 @@ import TableHead from '@material-ui/core/TableHead';
 import TransactionsTableHeader, { rows } from './elements/TableHeader';
 import TransactionsTableRow from './elements/TableRow';
 import { sortByType } from '../../utilities/arrays';
+import { TransactionsListTypes } from '../../features/transactionsList/transactionsList.api';
 
 class TransactionsTable extends PureComponent {
+  static propTypes = {
+    data: TransactionsListTypes.isRequired,
+  };
+
   state = {
     orderBy: 'fromDate',
     orderAsc: false,
@@ -49,7 +54,7 @@ class TransactionsTable extends PureComponent {
               <TransactionsTableRow
                 key={row.id}
                 index={index}
-                {...row}
+                row={row}
               />
             ))
           }
