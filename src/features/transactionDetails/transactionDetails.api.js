@@ -1,8 +1,17 @@
 import PropTypes from 'prop-types';
-import { fetchGetMethod } from '../../utilities/api';
+import { fetchGetMethod, fetchPutMethod } from '../../utilities/api';
 
 export const fetchTransactiionDetails = id => (
   fetchGetMethod(`transaction/${id}`)
+    .catch((err) => {
+      throw err;
+    })
+);
+
+export const acceptTransaction = id => (
+  fetchPutMethod(`transaction/${id}`, {
+    status: 'FL_APPROVED',
+  })
     .catch((err) => {
       throw err;
     })
@@ -23,4 +32,7 @@ export const transactionDetailsTypes = PropTypes.shape({
   totalDiscount: PropTypes.number.isRequired,
 });
 
-export default fetchTransactiionDetails;
+export default {
+  fetchTransactiionDetails,
+  acceptTransaction,
+};
