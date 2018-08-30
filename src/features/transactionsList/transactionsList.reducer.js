@@ -15,6 +15,7 @@ export const initialState = {
   lastPageError: false,
   isDataLoading: false,
   transactionsList: [],
+  fetchedPages: [],
 };
 
 // ------------------------------------
@@ -43,9 +44,13 @@ export default handleActions({
     return {
       ...state,
       isDataLoading: false,
+      fetchedPages: [
+        ...state.fetchedPages,
+        payload.pageNumber,
+      ],
       transactionsList: [
         ...state.transactionsList,
-        ...payload,
+        ...payload.data,
       ],
     };
   },

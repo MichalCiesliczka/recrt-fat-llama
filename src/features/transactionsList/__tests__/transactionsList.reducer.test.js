@@ -30,14 +30,6 @@ describe('transactionsList reducer', () => {
     expect(changedState.allFetched).toEqual(false);
   });
 
-  it('should change status if all transactions are fetched', () => {
-    let changedState = transactionsList(initialState, changeAllTransactionsFetchedStatus(true));
-    expect(changedState.allFetched).toEqual(true);
-
-    changedState = transactionsList(initialState, changeAllTransactionsFetchedStatus(false));
-    expect(changedState.allFetched).toEqual(false);
-  });
-
   it('should save transactions list and update it when new data comes in', () => {
     const payload = [
       { id: 1 },
@@ -46,9 +38,10 @@ describe('transactionsList reducer', () => {
 
     let changedState = transactionsList(
       initialState,
-      { type: transactionsListRoutine.SUCCESS, payload },
+      { type: transactionsListRoutine.SUCCESS, payload: { data: payload, pageNumber: 0 } },
     );
     expect(changedState.transactionsList).toEqual(payload);
+    expect(changedState.fetchedPages.includes(0)).toBeTruthy();
 
     const nextData = [
       { id: 3 },
@@ -56,9 +49,10 @@ describe('transactionsList reducer', () => {
     ];
     changedState = transactionsList(
       changedState,
-      { type: transactionsListRoutine.SUCCESS, payload: nextData },
+      { type: transactionsListRoutine.SUCCESS, payload: { data: nextData, pageNumber: 1 } },
     );
     expect(changedState.transactionsList).toEqual([...payload, ...nextData]);
+    expect(changedState.fetchedPages.includes(1)).toBeTruthy();
   });
 
   it('should mark data as loading when request has been sent', () => {

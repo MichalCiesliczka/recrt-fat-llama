@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionDetails component display loader when data is loading 1`] = `
+<div
+  className="MuiCircularProgress-root-10 MuiCircularProgress-colorPrimary-13 MuiCircularProgress-indeterminate-12"
+  role="progressbar"
+  style={
+    Object {
+      "height": 40,
+      "width": 40,
+    }
+  }
+>
+  <svg
+    className="MuiCircularProgress-svg-15"
+    viewBox="22 22 44 44"
+  >
+    <circle
+      className="MuiCircularProgress-circle-16 MuiCircularProgress-circleIndeterminate-18"
+      cx={44}
+      cy={44}
+      fill="none"
+      r={20.2}
+      strokeWidth={3.6}
+      style={Object {}}
+    />
+  </svg>
+</div>
+`;
+
+exports[`TransactionDetails component display loader with default props 1`] = `
+<div
+  className="MuiCircularProgress-root-10 MuiCircularProgress-colorPrimary-13 MuiCircularProgress-indeterminate-12"
+  role="progressbar"
+  style={
+    Object {
+      "height": 40,
+      "width": 40,
+    }
+  }
+>
+  <svg
+    className="MuiCircularProgress-svg-15"
+    viewBox="22 22 44 44"
+  >
+    <circle
+      className="MuiCircularProgress-circle-16 MuiCircularProgress-circleIndeterminate-18"
+      cx={44}
+      cy={44}
+      fill="none"
+      r={20.2}
+      strokeWidth={3.6}
+      style={Object {}}
+    />
+  </svg>
+</div>
+`;
