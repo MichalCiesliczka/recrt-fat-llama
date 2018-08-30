@@ -2,8 +2,9 @@ import { formatDate } from '../dates';
 
 describe('formatDate in dates utility', () => {
   it('should correctly format given date', () => {
-    const dateString = '2018-02-16 00:00:00+00';
-    const formattedDate = '16/02/2018, 01:00:00';
+    const timestamp = 1535623200000;
+    const dateString = new Date(timestamp).setUTCHours(10);
+    const formattedDate = '30/08/2018, 10:00:00';
 
     expect(formatDate(dateString)).toEqual(formattedDate);
   });
