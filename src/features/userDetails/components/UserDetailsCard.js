@@ -39,7 +39,7 @@ const UserDetailsCard = ({ user, classes }) => {
         title="User avatar"
       />
       <CardContent>
-        <Typography gutterBottom variant="headline" component="h2">
+        <Typography gutterBottom component="h4">
           {prepareUserName(user.firstName, user.lastName)}
         </Typography>
         <List>
@@ -69,9 +69,10 @@ const UserDetailsCard = ({ user, classes }) => {
 
 UserDetailsCard.propTypes = {
   user: UserDetailsTypes,
-  /* eslint-disable */
-  classes: PropTypes.object.isRequired,
-  /* eslint-enable */
+  classes: PropTypes.shape({
+    card: PropTypes.string.isRequired,
+    media: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 UserDetailsCard.defaultProps = {

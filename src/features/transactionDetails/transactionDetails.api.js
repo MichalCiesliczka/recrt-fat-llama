@@ -8,7 +8,7 @@ export const fetchTransactiionDetails = id => (
     })
 );
 
-export const acceptTransaction = id => (
+export const approveTransaction = id => (
   fetchPutMethod(`transaction/${id}`, {
     status: 'FL_APPROVED',
   })
@@ -34,5 +34,5 @@ export const transactionDetailsTypes = PropTypes.shape({
 
 export default {
   fetchTransactiionDetails,
-  acceptTransaction,
+  approveTransaction,
 };

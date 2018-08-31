@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import Typography from '@material-ui/core/Typography';
 
 import TransactionDetailsContainer from '../../features/transactionDetails';
 
@@ -22,13 +23,21 @@ class TransactionsList extends PureComponent {
     const { transactionId } = this.props;
     return (
       <div>
-        <NavLink to="/">
-          Get back to list
-        </NavLink>
-        <p>
+        <Typography
+          style={{
+            margin: 20,
+          }}
+          component="p"
+          align="left"
+        >
+          <NavLink to="/">
+            &#60; Get back to list
+          </NavLink>
+        </Typography>
+        <Typography gutterBottom variant="headline" component="h1">
           Details for transaction: #
           {transactionId}
-        </p>
+        </Typography>
         <TransactionDetailsContainer />
       </div>
     );

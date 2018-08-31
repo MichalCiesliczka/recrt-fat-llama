@@ -23,7 +23,7 @@ import PaymentIcon from '@material-ui/icons/Payment';
 import { formatDate } from '../../../utilities/dates';
 import { formatMoneyWithCurrency } from '../../../utilities/money';
 import { STATUS_LABELS } from '../transactionDetails.constans';
-import { transactionDetailsTypes, acceptTransaction } from '../transactionDetails.api';
+import { transactionDetailsTypes, approveTransaction } from '../transactionDetails.api';
 
 import UserDetailsRoute from '../../../routes/UserDetails';
 
@@ -37,14 +37,16 @@ const TransactionDetailsCard = ({ transaction }) => {
         variant="outlined"
       />
       <Button
-        onClick={() => acceptTransaction(transaction.id)}
+        onClick={() => approveTransaction(transaction.id)}
       >
-        Accept it
+        Approve it
       </Button>
       <br />
       <br />
-      ItemId: #
-      {transaction.itemId}
+      <Typography variant="headline" component="h2">
+        ItemId: #
+        {transaction.itemId}
+      </Typography>
       <Grid
         container
         justify="center"
@@ -121,13 +123,13 @@ const TransactionDetailsCard = ({ transaction }) => {
           spacing={32}
         >
           <Grid item>
-            <Typography gutterBottom variant="headline" component="h2">
+            <Typography component="h3">
               Lender
             </Typography>
             <Route render={() => <UserDetailsRoute userId={transaction.lenderId} />} />
           </Grid>
           <Grid item>
-            <Typography gutterBottom variant="headline" component="h2">
+            <Typography component="h3">
               Borrower
             </Typography>
             <Route render={() => <UserDetailsRoute userId={transaction.borrowerId} />} />

@@ -1,9 +1,5 @@
 import { handleActions } from 'redux-actions';
 
-// import {
-//   increaseTransactionsListPage,
-//   changeAllTransactionsFetchedStatus,
-// } from './transactionsList.actions';
 import { transactionDetailsRoutine } from './transactionDetails.sagas';
 
 // ------------------------------------
