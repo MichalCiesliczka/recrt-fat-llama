@@ -39,7 +39,7 @@ const UserDetailsCard = ({ user, classes }) => {
         title="User avatar"
       />
       <CardContent>
-        <Typography gutterBottom variant="headline" component="h2">
+        <Typography gutterBottom component="h4">
           {prepareUserName(user.firstName, user.lastName)}
         </Typography>
         <List>

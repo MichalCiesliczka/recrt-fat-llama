@@ -20,7 +20,7 @@ export function* handleTransactionsListRoutine({ payload: { pageNumber, iteratio
     try {
       yield put(transactionsListRoutine.request());
       const transactionsList = yield call(fetchTransactionsList, pageNumber);
-      if (!transactionsList.length || transactionsList.length < 20) {
+      if (transactionsList.length < 20) {
         yield put(changeAllTransactionsFetchedStatus(true));
         return;
       }

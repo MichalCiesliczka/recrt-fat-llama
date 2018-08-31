@@ -73,11 +73,11 @@ exports[`UserDetails component display user details card when either data is not
   <div
     className="MuiCardContent-root-51"
   >
-    <h2
-      className="MuiTypography-root-52 MuiTypography-headline-57 MuiTypography-gutterBottom-69"
+    <h4
+      className="MuiTypography-root-52 MuiTypography-body1-61 MuiTypography-gutterBottom-69"
     >
       Mr./Ms. John Doe
-    </h2>
+    </h4>
     <ul
       className="MuiList-root-77 MuiList-padding-78"
     >

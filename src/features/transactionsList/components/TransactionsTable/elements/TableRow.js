@@ -14,8 +14,12 @@ const TransactionsTableRow = ({ index, history, row }) => {
   const redirectToDetails = id => history.push(`/transaction/${id}`);
   return (
     <TableRow
+      hover
       key={row.id}
       onClick={() => redirectToDetails(row.id)}
+      style={{
+        cursor: 'pointer',
+      }}
     >
       <TableCell>{index + 1}</TableCell>
       <TableCell>{formatDate(row.fromDate)}</TableCell>
