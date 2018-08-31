@@ -8,7 +8,6 @@ const Routes = () => (
   <Router>
     <Switch>
       <Route path="/transaction/:id" component={TransactionDetails} />
-      {/* <Route path="/user/:id" component={UserDetails} /> */}
 
       <Route component={TransactionsList} />
     </Switch>

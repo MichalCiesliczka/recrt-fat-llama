@@ -69,9 +69,10 @@ const UserDetailsCard = ({ user, classes }) => {
 
 UserDetailsCard.propTypes = {
   user: UserDetailsTypes,
-  /* eslint-disable */
-  classes: PropTypes.object.isRequired,
-  /* eslint-enable */
+  classes: PropTypes.shape({
+    card: PropTypes.string.isRequired,
+    media: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 UserDetailsCard.defaultProps = {

@@ -43,7 +43,7 @@ const TransactionDetailsCard = ({ transaction }) => {
       </Button>
       <br />
       <br />
-      <Typography gutterTop variant="headline" component="h2">
+      <Typography variant="headline" component="h2">
         ItemId: #
         {transaction.itemId}
       </Typography>

@@ -10,11 +10,9 @@ const LoadableComponent = Loadable({
   loading: () => null,
 });
 
-const mapStateToProps = (state, { userId }) => {
-  return {
-    userId,
-  };
-};
+const mapStateToProps = (state, { userId }) => ({
+  userId,
+});
 
 const mapDispatchToProps = {
   userDetailsRoutine,
