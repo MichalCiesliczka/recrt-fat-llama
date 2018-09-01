@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import TransactionsDetailsRouting from '../TransactionDetails';
+import { TransactionsList } from '../TransactionDetails';
 
 describe('<TransactionsDetailsRouting />', () => {
   const defaultProps = {
@@ -18,11 +18,11 @@ describe('<TransactionsDetailsRouting />', () => {
   });
 
   it('renders without crashing', () => {
-    shallow(<TransactionsDetailsRouting {...defaultProps} />);
+    shallow(<TransactionsList {...defaultProps} />);
   });
 
   it('should run transactions list routine on mount', () => {
-    shallow(<TransactionsDetailsRouting {...defaultProps} />);
+    shallow(<TransactionsList {...defaultProps} />);
 
     expect(defaultProps.transactionDetailsRoutine.mock.calls.length).toEqual(1);
     expect(defaultProps.transactionDetailsRoutine.mock.calls[0][0]).toEqual('123');
