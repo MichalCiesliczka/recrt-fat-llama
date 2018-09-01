@@ -21,6 +21,8 @@ import { prepareUserName } from '../../../utilities/string';
 const styles = {
   card: {
     width: 450,
+    marginBottom: 40,
+    paddingTop: 20,
   },
   media: {
     height: 200,

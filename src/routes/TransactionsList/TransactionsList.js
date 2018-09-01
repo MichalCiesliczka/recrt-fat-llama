@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+
 import TransactionsListContainer from '../../features/transactionsList';
 
 class TransactionsList extends PureComponent {
@@ -30,7 +34,20 @@ class TransactionsList extends PureComponent {
   render() {
     return (
       <div>
-        <p>Transactions List</p>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography
+              variant="title"
+              color="inherit"
+              align="center"
+              style={{
+                width: '100%',
+              }}
+            >
+              Transactions List
+            </Typography>
+          </Toolbar>
+        </AppBar>
         <TransactionsListContainer />
       </div>
     );
