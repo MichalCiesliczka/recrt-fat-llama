@@ -4,7 +4,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
-export const rows = [
+export const columns = [
   {
     id: 'fromDate',
     label: 'From Date',
@@ -33,17 +33,17 @@ const TransactionsTableHeader = props => (
       No.
     </TableCell>
     {
-      rows.map(row => (
+      columns.map(column => (
         <TableCell
           numeric
-          key={row.id}
+          key={column.id}
         >
           <TableSortLabel
-            active={props.orderBy === row.id}
+            active={props.orderBy === column.id}
             direction={props.orderAsc ? 'asc' : 'desc'}
-            onClick={() => props.sortHandler(row.id)}
+            onClick={() => props.sortHandler(column.id)}
           >
-            {row.label}
+            {column.label}
           </TableSortLabel>
         </TableCell>
       ))
