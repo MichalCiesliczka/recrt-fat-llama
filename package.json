@@ -33,7 +33,7 @@
     "eject": "react-scripts eject",
     "api-linux": "./backend/server-linux-amd64",
     "api-windows": "./backend/server-windows-4.0-amd64.exe",
-    "api-os": "./backend/server-darwin-10-amd64",
+    "api-os": "./backend/server-darwin-10.6-amd64",
     "eslint": "eslint -c .eslintrc.js src/",
     "eslint-fix": "eslint -c .eslintrc.js src/ --fix"
   },

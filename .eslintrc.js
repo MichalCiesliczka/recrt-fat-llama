@@ -7,9 +7,6 @@ module.exports = {
     browser: true
   },
   rules: {
-    // "curly": [
-    //   "error"
-    // ],
     "arrow-body-style": [
       "off"
     ],

@@ -3,7 +3,7 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableHead from '@material-ui/core/TableHead';
 
-import TransactionsTableHeader, { rows } from './elements/TableHeader';
+import TransactionsTableHeader, { columns } from './elements/TableHeader';
 import TransactionsTableRow from './elements/TableRow';
 import { sortByType } from '../../../../utilities/arrays';
 import { TransactionsListTypes } from '../../transactionsList.api';
@@ -20,7 +20,7 @@ class TransactionsTable extends PureComponent {
 
   handleSorting = (a, b) => {
     const { orderBy, orderAsc } = this.state;
-    const sortType = rows.find(el => el.id === orderBy).type;
+    const sortType = columns.find(el => el.id === orderBy).type;
 
     return sortByType(a[orderBy], b[orderBy], sortType, orderAsc);
   }

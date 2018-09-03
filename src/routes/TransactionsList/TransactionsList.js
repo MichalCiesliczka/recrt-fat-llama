@@ -28,6 +28,7 @@ class TransactionsList extends PureComponent {
       increaseTransactionsListPage();
       return;
     }
+
     transactionsListRoutine({ pageNumber: currentTransactionsListPage });
   }
 
