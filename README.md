@@ -11,7 +11,7 @@ yarn start-os
 ```
 
 ## Backend
-API is prepared by Fat Llama and stored in `backend` directory. Run proper binary regarding your OS.
+API is prepared by external company and stored in `backend` directory. Run proper binary regarding your OS.
 
 ## Frontend
 Frontend is based on [create-react-app](https://github.com/facebook/create-react-app) boilerplate.
@@ -24,7 +24,7 @@ List of all the libs you can find in `package.json` file.
 
 Project's structure is prepared for scalability. See bellow chart:
 ```
-backend - Server files from Fat Llama
+backend - Server files
 [...]
 src/
   components - app-cross reusable components not linked with any functionality
